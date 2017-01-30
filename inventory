@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+
+import json
+import yaml
+import glob
+
+groups = {}
+
+for hostfilename in glob.glob('./host_vars/*.yml'):
+    with open(hostfilename, 'r') as hostfile:
+        host = yaml.load(hostfile)
+        for hostgroup in host['host_groups']:
+            if hostgroup not in groups.keys():
+                groups[ hostgroup ] = { 'hosts': [] }
+            groups[ hostgroup ]['hosts'].append( host['host_fqdn'] )
+
+print json.dumps(groups)
+

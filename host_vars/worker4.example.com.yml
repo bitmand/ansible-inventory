@@ -1,0 +1,6 @@
+---
+host_fqdn: worker4.example.com
+host_groups:
+  - workers
+  - dc_atlanta
+

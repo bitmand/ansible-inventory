@@ -1,0 +1,6 @@
+---
+host_fqdn: db1.example.com
+host_groups:
+  - databases
+  - dc_atlanta
+

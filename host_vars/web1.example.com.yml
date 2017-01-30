@@ -1,0 +1,6 @@
+---
+host_fqdn: web1.example.com
+host_groups:
+  - webservers
+  - dc_atlanta
+
