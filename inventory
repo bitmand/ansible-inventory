@@ -8,6 +8,7 @@ groups = {}
 
 for hostfilename in glob.glob('./host_vars/*.yml'):
     with open(hostfilename, 'r') as hostfile:
+        # Using yaml.CLoader - https://pyyaml.org/wiki/PyYAMLDocumentation
         host = yaml.load(hostfile, Loader=yaml.CLoader)
         for hostgroup in host['host_groups']:
             if hostgroup not in groups.keys():
